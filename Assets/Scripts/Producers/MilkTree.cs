@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MilkTree : MonoBehaviour
+public class MilkTree : Producer
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        productName = "Milk";
+        productWaitTime = 5;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Init();
     }
 }

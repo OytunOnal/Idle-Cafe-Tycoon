@@ -5,10 +5,11 @@ using UnityEngine;
 public abstract class Product : MonoBehaviour
 {
     public float Height;
+    public string productName;
 
     private MeshRenderer meshRenderer;
 
-    private void Start() 
+    protected void Initialize() 
     {
         meshRenderer = GetComponent<MeshRenderer>();
         Height = meshRenderer.bounds.size.y;      

@@ -36,7 +36,7 @@ public class ProductBag : MonoBehaviour
                 {
                     // Assign a new Product object to the empty space
                     products[kvp.Key] = newProduct;
-                    newProduct.transform.SetParent(this.transform);
+                    newProduct.transform.SetParent(this.transform,true);
                     newProduct.transform.localPosition = kvp.Key.transform.localPosition;
                     count++;
                     CheckIfFull();
@@ -71,5 +71,22 @@ public class ProductBag : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void RemoveProduct(Product p)
+    {
+        if (products.Count == 0) return ;
+
+        foreach (KeyValuePair<GameObject, Product> kvp in products)
+        {
+            // Check if the value is null
+            if (kvp.Value != null && kvp.Value == p)
+            {
+                products[kvp.Key] = null;
+                count--;
+                CheckIfFull();
+                return ;
+            }
+        }
     }
 }

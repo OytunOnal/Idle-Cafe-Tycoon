@@ -41,7 +41,7 @@ public abstract class Producer : MonoBehaviour
     {
         Log.ProducerLog("Produce");
         GameObject newProduct = PoolManager.Spawn(productName);
-
+        if (newProduct == null) return;
         productBag.AddProduct(newProduct.GetComponent<Product>());
 
         isBagFull = productBag.isFull;
