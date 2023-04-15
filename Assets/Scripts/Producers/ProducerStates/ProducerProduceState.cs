@@ -25,7 +25,7 @@ public class ProducerProduceState : ProducerState
 
     public override void Process()
     {
-         Log.ProducerStateLog(ownerProducer.name + " ProduceState Process");
+        Log.ProducerStateLog(ownerProducer.name + " ProduceState Process");
         ownerProducer.Produce();
         PostProcess();
     }

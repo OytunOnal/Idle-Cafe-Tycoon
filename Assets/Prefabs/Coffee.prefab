@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabName: Coffee
-  IsDynamic: 0
+  IsDynamic: 1
 --- !u!114 &8579143364732453167
 MonoBehaviour:
   m_ObjectHideFlags: 0

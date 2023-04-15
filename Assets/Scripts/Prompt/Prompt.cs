@@ -6,7 +6,7 @@ using UnityEngine;
 public class Prompt : MonoBehaviour
 {
     private Vector3 promptLinePos = Vector3.zero;
-    private Vector3 promptLineHeigt = new Vector3(0,0.5f,0);
+    private Vector3 promptLineHeigt = new Vector3(0,1.5f,0);
     public Dictionary<Type,PromptLine> promptLines = new Dictionary<Type, PromptLine>();
 
     public void AddPromtLine(Type type, GameObject newPromptLineGO, int count)

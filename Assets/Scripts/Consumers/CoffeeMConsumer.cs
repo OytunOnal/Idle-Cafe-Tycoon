@@ -16,7 +16,7 @@ public class CoffeeMConsumer : Consumer
         //Get new prompt from the pool and initialize it
         GameObject promtGO = PoolManager.Spawn("Prompt");
         prompt = promtGO.GetComponent<Prompt>();
-        promtGO.transform.SetParent(this.transform,false);
+        promtGO.transform.SetParent(this.transform,true);
         promtGO.transform.localPosition = new Vector3(0,1,0);
 
 

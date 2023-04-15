@@ -46,7 +46,7 @@ public class PoolManager : MonoBehaviour
 		else
 		{
 			Instance = this;
-			Pools.Clear();
+			//Pools.Clear();
 			InitializePrefabPools();
 		}
 	}

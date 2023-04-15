@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerBag bag;
+    [SerializeField]    private PlayerBag bag;
+    [SerializeField]    private Wallet wallet;
 
 
     private void OnTriggerEnter(Collider other) 
@@ -34,6 +34,14 @@ public class Player : MonoBehaviour
             if (bag.isFull) return;
                 Product p = other.GetComponent<Producer>().GiveCollectible();
                 bag.AddProduct(p);
+        }
+
+        else if (other.tag.Equals("Purchasable"))
+        {
+            if (wallet.isEmpty) return;
+
+            other.GetComponent<Consumer>().TakeCollectible(wallet.money);
+            wallet.Spend();
         }
     }
 
