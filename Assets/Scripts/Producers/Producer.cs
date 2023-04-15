@@ -7,22 +7,34 @@ public abstract class Producer : MonoBehaviour
 {
     [SerializeField]
     protected ProductBag productBag;
-    ProducerState CurrentState;
+    
+    protected float productWaitTime;
+    protected string productName;
+    public bool hasPrequisites = false;
+
+    public float ProductWaitTime {get => productWaitTime; set{}}
+    public bool IsBagFull {get => productBag.IsBagFull; set{}}
+
+    private ProducerState CurrentState;
     public ProducerState WaitState;
     public ProducerState ProduceState;
 
-    public float productWaitTime;
-    protected string productName;
+    public ProducerState PrequisiteState;
 
-    public bool isBagFull = false;
-    public Action ProductNumberDecrease;
+    public Action ProductNumberDecreaseEvent;
+    public Action PrequisiteFilledEvent;
+    public Action ConsumePrequisitesEvent;
+
+    public bool prequisiteFilled = false;
 
     protected void Init() 
     {
+        PrequisiteFilledEvent += PrequisiteFilled;
         Log.ProducerLog("Initialize");
         WaitState = new ProducerWaitState(this);
-        ProduceState = new ProducerProduceState(this);   
-        CurrentState = ProduceState;
+        ProduceState = new ProducerProduceState(this); 
+        PrequisiteState = new ProducerPrequisiteState(this);   
+        CurrentState = PrequisiteState;
         CurrentState.PreProcess();
     }
 
@@ -30,9 +42,8 @@ public abstract class Producer : MonoBehaviour
     {
         Log.ProducerLog("Give Collectible");
         Product p = productBag.RemoveProduct();
-        isBagFull = productBag.isFull;
 
-        ProductNumberDecrease?.Invoke();
+        ProductNumberDecreaseEvent?.Invoke();
 
         return p;
     }
@@ -43,8 +54,6 @@ public abstract class Producer : MonoBehaviour
         GameObject newProduct = PoolManager.Spawn(productName);
         if (newProduct == null) return;
         productBag.AddProduct(newProduct.GetComponent<Product>());
-
-        isBagFull = productBag.isFull;
     }
 
     public void StepState()
@@ -52,6 +61,11 @@ public abstract class Producer : MonoBehaviour
         Log.ProducerLog("StepState");
         CurrentState = CurrentState.nextState;
         CurrentState.PreProcess();
+    }
+
+    public void PrequisiteFilled()
+    {      
+        prequisiteFilled = true;
     }
 }
 

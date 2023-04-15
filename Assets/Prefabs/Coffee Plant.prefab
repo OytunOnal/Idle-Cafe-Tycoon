@@ -208,8 +208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productBag: {fileID: 2887302692532328773}
-  productWaitTime: 0
-  isBagFull: 0
 --- !u!114 &2887302692532328773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2887457177143388223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ce328365bedac42b2b834aa13eaecf, type: 3}
+  m_Script: {fileID: 11500000, guid: 41580ff3f4ca67444846eb3ae43487d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   productPositions:
@@ -227,4 +225,4 @@ MonoBehaviour:
   - {fileID: 2887302691874940473}
   - {fileID: 2887302691996486590}
   isFull: 0
-  size: 4
+  size: 3

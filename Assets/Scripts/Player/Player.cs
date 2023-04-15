@@ -12,12 +12,18 @@ public class Player : MonoBehaviour
     {
         if (other.tag.Equals("Consumer"))
         {
+            Consumer consumer = other.GetComponent<Consumer>();
+            
             for (int i =0; i < bag.products.Count; i++)
-                if (other.GetComponent<Consumer>().TakeCollectible(bag.products[i]))
+            {
+                
+                if (consumer.IsBagFull) return;
+                if (consumer.TakeCollectible(bag.products[i]))
                 {
                     bag.RemoveProduct(bag.products[i]);
                     i--;
                 }
+            }
         }
     }
 

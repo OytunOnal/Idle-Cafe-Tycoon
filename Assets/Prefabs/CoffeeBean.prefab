@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3799291232002786357}
-  - component: {fileID: 3801816082843321989}
-  - component: {fileID: 3811813986972177733}
   - component: {fileID: -4556839185713852581}
   - component: {fileID: -1288262262228777066}
   m_Layer: 0
@@ -31,25 +29,88 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.98, z: -0.013}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3788202041690702028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &3801816082843321989
+--- !u!114 &-4556839185713852581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797787116001984301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33c80d34916fc94cac8ecf786605b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefabName: CoffeeBean
+  IsDynamic: 1
+--- !u!114 &-1288262262228777066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797787116001984301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca428c21a0cfbf4993a9d209bf947b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Height: 0
+  productName: 
+  meshRenderer: {fileID: 1693124057863649631}
+--- !u!1 &8372396783781794496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3788202041690702028}
+  - component: {fileID: 6446669624898980834}
+  - component: {fileID: 1693124057863649631}
+  m_Layer: 0
+  m_Name: CoffeeBean
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3788202041690702028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372396783781794496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3799291232002786357}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!33 &6446669624898980834
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797787116001984301}
+  m_GameObject: {fileID: 8372396783781794496}
   m_Mesh: {fileID: 4300000, guid: ab271e6bd1905934f9ca91dd64817721, type: 2}
---- !u!23 &3811813986972177733
+--- !u!23 &1693124057863649631
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797787116001984301}
+  m_GameObject: {fileID: 8372396783781794496}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,31 +146,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-4556839185713852581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797787116001984301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33c80d34916fc94cac8ecf786605b18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PrefabName: CoffeeBean
-  IsDynamic: 1
---- !u!114 &-1288262262228777066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797787116001984301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca428c21a0cfbf4993a9d209bf947b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Height: 0
-  productName: 

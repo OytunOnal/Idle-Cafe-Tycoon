@@ -8,41 +8,33 @@ public class TrashBox : Consumer
 {
     private void Start() 
     {
-        consumableTypes.Add(typeof(CoffeeBean));
-        consumableTypes.Add(typeof(Milk));
+        consumableDic.Add(typeof(CoffeeBean),int.MaxValue);
+        currentConsumableDic.Add(typeof(CoffeeBean),int.MaxValue);
+        consumableDic.Add(typeof(Milk),int.MaxValue);
+        currentConsumableDic.Add(typeof(Milk),int.MaxValue);
+        consumableDic.Add(typeof(Coffee),int.MaxValue);
+        currentConsumableDic.Add(typeof(Coffee),int.MaxValue);
     }
-    private void OnTriggerEnter(Collider other) 
-    {
-        if (other.tag.Equals("Player"))
-        {
-            activePlane.SetActive(true);
-            plane.SetActive(false);
-        }
-    }
+    
 
-    private void OnTriggerExit(Collider other) 
+    protected override void Add(Product trash)
     {        
-        if (other.tag.Equals("Player"))
-        {
-            activePlane.SetActive(false);
-            plane.SetActive(true);
-        }        
-    }
-
-    protected override void Consume(Product trash)
-    {
-        
         Log.ConsumerLog("Consume");
         productBag.AddProduct(trash);
         DestroyAfter2Seconds(trash);
     }
 
     private async void DestroyAfter2Seconds(Product trash)
-    {
-        
+    {        
         Log.ConsumerLog("DestroyAfter2Seconds");
         await Task.Delay(2000);
+        Consume(trash);
+    }
+
+    protected override void Consume(Product trash)
+    {        
+        if (trash== null) return;
         productBag.RemoveProduct(trash);
-        PoolManager.Despawn(trash.gameObject);
+        base.Consume(trash);
     }
 }

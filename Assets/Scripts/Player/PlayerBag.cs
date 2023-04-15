@@ -33,9 +33,8 @@ public class PlayerBag : MonoBehaviour
 
     private void ArrangePosition(Product p)
     {
-        p.transform.SetParent(this.transform);
+        p.transform.SetParent(this.transform,true);
         p.transform.localPosition = lastPosition;
-        p.transform.rotation =  new Quaternion(0,0,0,0);
         lastPosition = new Vector3 (0,lastPosition.y + p.Height,0);
     }
 

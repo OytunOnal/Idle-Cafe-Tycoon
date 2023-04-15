@@ -6,8 +6,8 @@ public static class Log
     public static bool isDebugBuild = true;
     public static bool isProducerLogActive = false;
     public static bool isProducerStateLogActive = false;
-    public static bool isConsumerLogActive = true;    
-    public static bool isPlayerLogActive = true;
+    public static bool isConsumerLogActive = false;    
+    public static bool isPlayerLogActive = false;
 
     public static void PlayerLog(object message)
     {

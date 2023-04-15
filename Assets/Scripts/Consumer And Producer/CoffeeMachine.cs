@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CoffeeMachine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] CoffeeMProducer CoffeeMPro;
+    [SerializeField] CoffeeMConsumer CoffeeMCon;
+
+    private void Start() 
+    {        
+        CoffeeMPro.ConsumePrequisitesEvent += FireConsumeEvent;
+
+        CoffeeMCon.PrequisiteFilledEvent+= FirePrequisiteFilled;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FirePrequisiteFilled()
     {
-        
+         CoffeeMPro.PrequisiteFilledEvent?.Invoke();
+    }
+
+    void FireConsumeEvent()
+    {
+         CoffeeMCon.ConsumeEvent?.Invoke();
     }
 }
