@@ -8,7 +8,7 @@ public class CoffeeTree : Producer
     void Start()
     {
         productName = "CoffeeBean";
-        productWaitTime = 1;
+        produceTime = 1;
 
         Init();
     }

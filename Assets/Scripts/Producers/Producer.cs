@@ -6,14 +6,14 @@ using UnityEngine;
 public abstract class Producer : MonoBehaviour
 {
     [SerializeField]
-    protected ProductBag productBag;
+    protected StaticProductHolder productHolder;
     
-    protected float productWaitTime;
+    protected float produceTime;
     protected string productName;
     public bool hasPrequisites = false;
 
-    public float ProductWaitTime {get => productWaitTime; set{}}
-    public bool IsBagFull {get => productBag.IsBagFull; set{}}
+    public float ProductWaitTime {get => produceTime; set{}}
+    public bool IsFull {get => productHolder.IsFull; set{}}
 
     private ProducerState CurrentState;
     public ProducerState WaitState;
@@ -43,7 +43,7 @@ public abstract class Producer : MonoBehaviour
     public Product GiveCollectible()
     {
         Log.ProducerLog("Give Collectible");
-        Product p = productBag.RemoveProduct();
+        Product p = productHolder.RemoveProduct();
 
         if (p!=null) ProductNumberDecreaseEvent?.Invoke();
 
@@ -55,7 +55,7 @@ public abstract class Producer : MonoBehaviour
         Log.ProducerLog("Produce");
         GameObject newProduct = PoolManager.Spawn(productName);
         if (newProduct == null) return;
-        productBag.AddProduct(newProduct.GetComponent<Product>());
+        productHolder.AddProduct(newProduct.GetComponent<Product>());
         ProductReadyEvent?.Invoke();
     }
 

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Consumer : MonoBehaviour
 {
-    [SerializeField]    protected ProductBag productBag;
+    [SerializeField]    protected StaticProductHolder productHolder;
 
     protected Prompt prompt;
     protected Dictionary<Type,int> consumableDic = new Dictionary<Type, int>();
     protected Dictionary<Type,int> currentConsumableDic = new Dictionary<Type, int>();
     
-    public bool IsBagFull {get => productBag.IsBagFull; set{}}
+    public bool IsBagFull {get => productHolder.IsFull; set{}}
 
     public bool TakeCollectible(Product p)
     {

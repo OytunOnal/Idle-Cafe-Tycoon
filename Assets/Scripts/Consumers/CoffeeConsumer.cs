@@ -40,7 +40,7 @@ public class CoffeeConsumer : Consumer
     protected override void Add(Product p)
     {        
         Log.ConsumerLog("Consume");
-        productBag.AddProduct(p);
+        productHolder.AddProduct(p);
         int count = --currentConsumableDic[p.GetType()];
         prompt.SetCount(p.GetType(),count);
         if (count == 0) 
@@ -70,7 +70,7 @@ public class CoffeeConsumer : Consumer
     protected override void Consume(Product p)
     {        
         if (p== null) return;
-        productBag.RemoveProduct(p);
+        productHolder.RemoveProduct(p);
         base.Consume(p);
 
         GetComponent<Customer>().GoHome();
@@ -78,12 +78,12 @@ public class CoffeeConsumer : Consumer
 
     protected  void ConsumeAll()
     {        
-        Product p = productBag.RemoveProduct();
+        Product p = productHolder.RemoveProduct();
 
         while (p!= null)
         {
             Consume(p);
-            p = productBag.RemoveProduct();
+            p = productHolder.RemoveProduct();
         }
 
         foreach (KeyValuePair<Type, int> kvp in consumableDic)

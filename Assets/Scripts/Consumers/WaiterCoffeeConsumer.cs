@@ -15,7 +15,7 @@ public class WaiterCoffeeConsumer : Consumer
     protected override void Consume(Product p)
     {        
         if (p== null) return;
-        productBag.RemoveProduct(p);
+        productHolder.RemoveProduct(p);
         base.Consume(p);
 
         GetComponent<Customer>().GoHome();
@@ -23,12 +23,12 @@ public class WaiterCoffeeConsumer : Consumer
 
     protected  void ConsumeAll()
     {        
-        Product p = productBag.RemoveProduct();
+        Product p = productHolder.RemoveProduct();
 
         while (p!= null)
         {
             Consume(p);
-            p = productBag.RemoveProduct();
+            p = productHolder.RemoveProduct();
         }
 
         foreach (KeyValuePair<Type, int> kvp in consumableDic)

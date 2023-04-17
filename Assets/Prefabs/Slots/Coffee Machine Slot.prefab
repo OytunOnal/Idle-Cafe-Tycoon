@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3864e2297c386b48850880b9fbff3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productBag: {fileID: 0}
+  productHolder: {fileID: 0}
   price: 5
 --- !u!65 &4388942580240116773
 BoxCollider:
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eded39e29fdb1194db59ca327a84ec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productBag: {fileID: 372997971226896781}
+  productHolder: {fileID: 372997971226896781}
   hasPrequisites: 0
   prequisiteFilled: 0
 --- !u!114 &372997971226896781
@@ -587,15 +587,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 372997971226896771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41580ff3f4ca67444846eb3ae43487d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b6d5c81b6a707e5469a28662b439dc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 4
   productPositions:
   - {fileID: 372997971644886795}
   - {fileID: 372997970907176305}
   - {fileID: 372997971779862114}
   - {fileID: 372997972377075067}
-  size: 4
 --- !u!1 &372997971395319366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88ff5b44ef600940b75f1e6b34d8864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productBag: {fileID: 372997971955510283}
+  productHolder: {fileID: 372997971955510283}
 --- !u!65 &372997971955510389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1123,15 +1123,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 372997971955510281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41580ff3f4ca67444846eb3ae43487d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b6d5c81b6a707e5469a28662b439dc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 4
   productPositions:
   - {fileID: 372997970791448149}
   - {fileID: 372997970843119188}
   - {fileID: 372997971210318431}
   - {fileID: 372997971598230405}
-  size: 4
 --- !u!1 &372997972088073835
 GameObject:
   m_ObjectHideFlags: 0

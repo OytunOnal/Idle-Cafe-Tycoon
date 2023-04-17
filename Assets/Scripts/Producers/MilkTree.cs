@@ -7,7 +7,7 @@ public class MilkTree : Producer
     void Start()
     {
         productName = "Milk";
-        productWaitTime = 1;
+        produceTime = 1;
 
         Init();
     }

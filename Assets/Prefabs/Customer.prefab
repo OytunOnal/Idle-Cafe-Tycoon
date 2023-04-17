@@ -468,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 227577835808258636}
   m_Layer: 0
-  m_Name: BagPos
+  m_Name: HoldPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 2486478716689626899}
   - component: {fileID: 2019936193}
   - component: {fileID: 2019936195}
-  - component: {fileID: 5653920569394284893}
+  - component: {fileID: 3307066400328361885}
   - component: {fileID: 1072468824282356283}
   - component: {fileID: 5509236439144205222}
   m_Layer: 0
@@ -656,10 +656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49380fb5cf4efc143a22a656726f57c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productBag: {fileID: 5653920569394284893}
-  plane: {fileID: 980357966}
-  activePlane: {fileID: 815604073}
---- !u!114 &5653920569394284893
+  productHolder: {fileID: 3307066400328361885}
+--- !u!114 &3307066400328361885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -668,12 +666,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8096848455582499814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41580ff3f4ca67444846eb3ae43487d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b6d5c81b6a707e5469a28662b439dc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 1
   productPositions:
   - {fileID: 4920228183899394516}
-  size: 1
 --- !u!65 &1072468824282356283
 BoxCollider:
   m_ObjectHideFlags: 0

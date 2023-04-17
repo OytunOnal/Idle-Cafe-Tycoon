@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3864e2297c386b48850880b9fbff3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productBag: {fileID: 0}
+  productHolder: {fileID: 0}
   price: 5
 --- !u!65 &7424354073788313703
 BoxCollider:
@@ -300,6 +300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6849338398284430599}
     m_Modifications:
+    - target: {fileID: 2076776598888869395, guid: d3be331dc9eabf64b8e41b26b41bae26, type: 3}
+      propertyPath: productHolder
+      value: 
+      objectReference: {fileID: 486547492144290225}
     - target: {fileID: 4658689062920744432, guid: d3be331dc9eabf64b8e41b26b41bae26, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -350,6 +354,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3be331dc9eabf64b8e41b26b41bae26, type: 3}
+--- !u!114 &486547492144290225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2076776598888869394, guid: d3be331dc9eabf64b8e41b26b41bae26, type: 3}
+  m_PrefabInstance: {fileID: 1878741076018427811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535950152533247603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d5c81b6a707e5469a28662b439dc25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6535950152532761171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4658689062920744432, guid: d3be331dc9eabf64b8e41b26b41bae26, type: 3}

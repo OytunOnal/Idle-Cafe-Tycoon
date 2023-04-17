@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Product : MonoBehaviour
 {
-    public float Height;
+    public Vector3 pSize;
     public string productName;
 
     [SerializeField]
@@ -12,8 +12,7 @@ public abstract class Product : MonoBehaviour
 
     protected void Initialize() 
     {
-        Height = meshRenderer.bounds.size.y;      
-
+        pSize = meshRenderer.bounds.size; 
     }
     public void Picked(){}
 }

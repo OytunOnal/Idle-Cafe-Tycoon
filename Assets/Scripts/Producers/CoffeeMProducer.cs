@@ -9,7 +9,7 @@ public class CoffeeMProducer : Producer
     {
         hasPrequisites = true;
         productName = "Coffee";
-        productWaitTime = 2;
+        produceTime = 2;
 
         Init();
         ProductNumberDecreaseEvent += CoffeeTaken;

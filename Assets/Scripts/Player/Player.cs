@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]    private PlayerBag bag;
+    [SerializeField]    private DynamicProductHolder productHolder;
     [SerializeField]    private Wallet wallet;
 
 
@@ -14,13 +14,13 @@ public class Player : MonoBehaviour
         {
             Consumer consumer = other.GetComponent<Consumer>();
             
-            for (int i =0; i < bag.products.Count; i++)
+            for (int i =0; i < productHolder.products.Count; i++)
             {
                 
                 if (consumer.IsBagFull) return;
-                if (consumer.TakeCollectible(bag.products[i]))
+                if (consumer.TakeCollectible(productHolder.products[i]))
                 {
-                    bag.RemoveProduct(bag.products[i]);
+                    productHolder.RemoveProduct(productHolder.products[i]);
                     i--;
                 }
             }
@@ -31,9 +31,9 @@ public class Player : MonoBehaviour
     {
         if (other.tag.Equals("Producer"))
         {
-            if (bag.isFull) return;
+            if (productHolder.IsFull) return;
                 Product p = other.GetComponent<Producer>().GiveCollectible();
-                bag.AddProduct(p);
+                productHolder.AddProduct(p);
         }
 
         else if (other.tag.Equals("Purchasable"))

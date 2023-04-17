@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23a0bf48fd8c6b42afec65e6b650d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productBag: {fileID: 2076776598888869394}
+  productHolder: {fileID: 2076776598888869394}
+  hasPrequisites: 0
+  prequisiteFilled: 0
 --- !u!114 &2076776598888869394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,13 +142,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4658689062920843728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41580ff3f4ca67444846eb3ae43487d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b6d5c81b6a707e5469a28662b439dc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 1
   productPositions:
   - {fileID: 2076776598338143095}
-  isFull: 0
-  size: 1
 --- !u!65 &6662174415578142041
 BoxCollider:
   m_ObjectHideFlags: 0

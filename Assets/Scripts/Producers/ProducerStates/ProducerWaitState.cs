@@ -25,7 +25,7 @@ public class ProducerWaitState : ProducerState
     public override void Process()
     {
          Log.ProducerStateLog(ownerProducer.name + " WaitState Process");
-        if (ownerProducer.IsBagFull)
+        if (ownerProducer.IsFull)
         {
             nextState = ownerProducer.WaitState;
             if (ownerProducer.ProductNumberDecreaseEvent == null || !ownerProducer.ProductNumberDecreaseEvent.GetInvocationList().Contains(postProcessDelegate))

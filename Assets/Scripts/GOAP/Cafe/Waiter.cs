@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Waiter : GAgent
 {
-    [SerializeField]    protected ProductBag productBag;
+    [SerializeField]    protected DynamicProductHolder productHolder;
 
     protected Dictionary<Type,int> consumableDic = new Dictionary<Type, int>();
     protected Dictionary<Type,int> currentConsumableDic = new Dictionary<Type, int>();
@@ -13,6 +13,7 @@ public class Waiter : GAgent
     SubGoal s1 = new SubGoal("CanServe", 1, true);
     SubGoal s3 = new SubGoal("CoffeeServed", 1, false);
     SubGoal s2 = new SubGoal("Waiting", 1, false);
+
 
     new void Start() 
     {
@@ -23,24 +24,22 @@ public class Waiter : GAgent
         goalsDic.Add(s3, 3);
         // Call the base start
         base.Start();
-
         consumableDic.Add(typeof(Coffee),1);
         currentConsumableDic.Add(typeof(Coffee),1);
     }
-
     
 
     private void OnTriggerStay(Collider other) 
     {
         if (other.name.Equals("CoffeeMProducer"))
         {
-            if (productBag.IsBagFull) return;
+            if (productHolder.IsFull) return;
             {
                 Product p = other.GetComponent<Producer>().GiveCollectible();
                 if (p == null) return;
                 
                 GWorld.Instance.GetWorld().ModifyState("HasCoffee", +1);
-                productBag.AddProduct(p);
+                productHolder.AddProduct(p);
                 inventory.AddItem(p.gameObject);
             }
         }
@@ -49,12 +48,12 @@ public class Waiter : GAgent
         {
             Consumer consumer = other.GetComponent<Consumer>();
             
-            if (!productBag.IsBagFull) return;
+            if (productHolder.GetProduct() == null) return;
             if (consumer.transform.position != destination) return;
             if (consumer.IsBagFull) return;
-            if (consumer.TakeCollectible(productBag.GetProduct()))
+            if (consumer.TakeCollectible(productHolder.GetProduct()))
             {
-                inventory.RemoveItem(productBag.RemoveProduct().gameObject); 
+                inventory.RemoveItem(productHolder.RemoveProduct().gameObject); 
                 GWorld.Instance.GetWorld().ModifyState("HasCoffee", -1);           
                     
             }

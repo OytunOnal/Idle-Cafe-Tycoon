@@ -20,7 +20,7 @@ public class TrashBox : Consumer
     protected override void Add(Product trash)
     {        
         Log.ConsumerLog("Consume");
-        productBag.AddProduct(trash);
+        productHolder.AddProduct(trash);
         DestroyAfter2Seconds(trash);
     }
 
@@ -34,7 +34,7 @@ public class TrashBox : Consumer
     protected override void Consume(Product trash)
     {        
         if (trash== null) return;
-        productBag.RemoveProduct(trash);
+        productHolder.RemoveProduct(trash);
         base.Consume(trash);
     }
 }
