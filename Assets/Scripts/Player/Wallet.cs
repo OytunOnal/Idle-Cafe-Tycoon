@@ -18,7 +18,7 @@ public class Wallet : MonoBehaviour
     [SerializeField] TMPro.TMP_Text coinCountText;
 
     protected int coinCount = 50;
-    protected int CoinCount 
+    public int CoinCount 
     {
         get => coinCount; 
         set
@@ -43,6 +43,13 @@ public class Wallet : MonoBehaviour
     public void Spend()
     {
         CoinCount--;
+        
+        coinCountText.SetText(CoinCount.ToString());
+    }
+
+    public void Spend(int cost)
+    {
+        CoinCount -= cost;
         
         coinCountText.SetText(CoinCount.ToString());
     }
