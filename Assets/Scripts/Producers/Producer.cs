@@ -25,6 +25,8 @@ public abstract class Producer : MonoBehaviour
     public Action PrequisiteFilledEvent;
     public Action ConsumePrequisitesEvent;
 
+    public Action ProductReadyEvent;
+
     public bool prequisiteFilled = false;
 
     protected void Init() 
@@ -43,7 +45,7 @@ public abstract class Producer : MonoBehaviour
         Log.ProducerLog("Give Collectible");
         Product p = productBag.RemoveProduct();
 
-        ProductNumberDecreaseEvent?.Invoke();
+        if (p!=null) ProductNumberDecreaseEvent?.Invoke();
 
         return p;
     }
@@ -54,6 +56,7 @@ public abstract class Producer : MonoBehaviour
         GameObject newProduct = PoolManager.Spawn(productName);
         if (newProduct == null) return;
         productBag.AddProduct(newProduct.GetComponent<Product>());
+        ProductReadyEvent?.Invoke();
     }
 
     public void StepState()

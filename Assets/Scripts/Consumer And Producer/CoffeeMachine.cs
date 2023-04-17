@@ -10,6 +10,7 @@ public class CoffeeMachine : MonoBehaviour
     private void Start() 
     {        
         CoffeeMPro.ConsumePrequisitesEvent += FireConsumeEvent;
+        CoffeeMPro.ProductReadyEvent += CoffeeReady;
 
         CoffeeMCon.PrequisiteFilledEvent+= FirePrequisiteFilled;
     }
@@ -22,5 +23,12 @@ public class CoffeeMachine : MonoBehaviour
     void FireConsumeEvent()
     {
          CoffeeMCon.ConsumeEvent?.Invoke();
+    }
+
+    void CoffeeReady()
+    {   
+        CoffeeMCon.Reset();
+        GWorld.Instance.GetQueue("beverages").AddResource(this.gameObject);
+        GWorld.Instance.GetWorld().ModifyState("CoffeeReady", +1);
     }
 }

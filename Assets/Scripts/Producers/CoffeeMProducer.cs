@@ -9,9 +9,15 @@ public class CoffeeMProducer : Producer
     {
         hasPrequisites = true;
         productName = "Coffee";
-        productWaitTime = 5;
+        productWaitTime = 2;
 
         Init();
+        ProductNumberDecreaseEvent += CoffeeTaken;
+    }
+
+    void CoffeeTaken()
+    {
+        GWorld.Instance.GetWorld().ModifyState("CoffeeReady", -1);
     }
 
 }

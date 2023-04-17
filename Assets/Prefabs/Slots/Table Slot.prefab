@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5306613014232389521}
   - component: {fileID: 9082419039921657908}
   - component: {fileID: 6480623475526905086}
+  - component: {fileID: 4413429164494526182}
   m_Layer: 0
   m_Name: Chair A
-  m_TagString: Untagged
+  m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5306613014232389521
 Transform:
@@ -84,6 +85,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4413429164494526182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823127357788851499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e277a7f9d1ecf54499081759fbc9472b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4823127359295752387
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +108,7 @@ GameObject:
   - component: {fileID: 5306613015007384185}
   - component: {fileID: 9082419038347714012}
   - component: {fileID: 6480623476433824022}
+  - component: {fileID: 124072943647590955}
   m_Layer: 0
   m_Name: Table B
   m_TagString: Untagged
@@ -167,6 +181,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &124072943647590955
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823127359295752387}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.016, y: 0.018000001, z: 0.009000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.001}
+  m_TimeToStationary: 0.5
 --- !u!1 &5633538137272076746
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,12 +208,13 @@ GameObject:
   - component: {fileID: 5633538137272076747}
   - component: {fileID: 5633538137272076745}
   - component: {fileID: 5633538137272076744}
+  - component: {fileID: 7054856817378254953}
   m_Layer: 0
   m_Name: Chair A (1)
-  m_TagString: Untagged
+  m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5633538137272076747
 Transform:
@@ -251,6 +282,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7054856817378254953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633538137272076746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e277a7f9d1ecf54499081759fbc9472b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5633538137994822353
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +738,7 @@ GameObject:
   m_TagString: Purchasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6891920096362835264
 Transform:
@@ -741,7 +784,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.79, y: 1, z: 1.97}
+  m_Size: {x: 4.97, y: 1, z: 7.81}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6891920097422328280
 GameObject:
@@ -758,7 +801,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6891920097422328287
 Transform:
@@ -767,7 +810,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6891920097422328280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.14, y: 0.1, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -15,9 +15,9 @@ public class Purchasable : Consumer
         promtGO.transform.localPosition = new Vector3(0,1,0);
 
 
-        consumableDic.Add(typeof(Money), price);
-        currentConsumableDic.Add(typeof(Money),price);
-        prompt.AddPromtLine(typeof(Money),
+        consumableDic.Add(typeof(Coin), price);
+        currentConsumableDic.Add(typeof(Coin),price);
+        prompt.AddPromtLine(typeof(Coin),
                             PoolManager.Spawn("MoneyPromptLine"),
                             price);
     }

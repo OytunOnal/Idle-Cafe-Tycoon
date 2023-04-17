@@ -27,7 +27,7 @@ public class ProductBag : MonoBehaviour
     }
 
 
-    public void AddProduct(Product newProduct)
+    public bool AddProduct(Product newProduct)
     {
         if (!isFull)
         {
@@ -42,10 +42,11 @@ public class ProductBag : MonoBehaviour
                     newProduct.transform.localPosition = kvp.Key.transform.localPosition;
                     count++;
                     CheckIfFull();
-                    return;
+                    return true;
                 }
             }
         }
+        return false;
     }
 
     private bool CheckIfFull()
@@ -69,6 +70,22 @@ public class ProductBag : MonoBehaviour
                 count--;
                 CheckIfFull();
                 return p;
+            }
+        }
+
+        return null;
+    }
+
+    public Product GetProduct()
+    {
+        if (products.Count == 0) return null;
+
+        foreach (KeyValuePair<GameObject, Product> kvp in products)
+        {
+            // Check if the value is null
+            if (kvp.Value != null)
+            {
+                return kvp.Value;
             }
         }
 

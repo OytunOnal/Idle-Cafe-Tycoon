@@ -9,7 +9,7 @@ public class Wallet : MonoBehaviour
     int coinCount = 50;
 
     public bool isEmpty = false;
-    public Money money;
+    public Coin money;
     // Start is called before the first frame update
     
 

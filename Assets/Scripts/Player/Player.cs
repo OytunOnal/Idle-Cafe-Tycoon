@@ -43,6 +43,13 @@ public class Player : MonoBehaviour
             other.GetComponent<Consumer>().TakeCollectible(wallet.money);
             wallet.Spend();
         }
+
+        else if (other.tag.Equals("Coin"))
+        {
+            PoolManager.Despawn(other.gameObject);
+            
+            wallet.Earn();
+        }
     }
 
 

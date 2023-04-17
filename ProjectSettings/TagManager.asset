@@ -9,6 +9,15 @@ TagManager:
   - Producer
   - Consumer
   - Purchasable
+  - Door
+  - Chair
+  - Home
+  - Money
+  - Coin
+  - Worker
+  - WaitingArea
+  - GetBeverage
+  - Coffee
   layers:
   - Default
   - TransparentFX

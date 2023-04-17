@@ -35,6 +35,25 @@ public class CoffeeMConsumer : Consumer
         ConsumeEvent += ConsumeAll;
     }
 
+    public void Reset()
+    {
+        foreach (KeyValuePair<Type, int> kvp in consumableDic)
+        {
+            // Clone the key
+            Type key = kvp.Key;
+
+            // Clone the value
+            int value = kvp.Value;
+
+            // Add the cloned key-value pair to the new dictionary
+            currentConsumableDic.Add(key, value);
+        }
+        prompt.SetCount(typeof(CoffeeBean),coffeeBeanCount);
+        prompt.SetCount(typeof(Milk),milkCount);
+        prompt.gameObject.SetActive(true);
+    }
+    
+
     protected override void Add(Product p)
     {        
         Log.ConsumerLog("Consume");
@@ -61,18 +80,6 @@ public class CoffeeMConsumer : Consumer
         {
             Consume(p);
             p = productBag.RemoveProduct();
-        }
-
-        foreach (KeyValuePair<Type, int> kvp in consumableDic)
-        {
-            // Clone the key
-            Type key = kvp.Key;
-
-            // Clone the value
-            int value = kvp.Value;
-
-            // Add the cloned key-value pair to the new dictionary
-            currentConsumableDic.Add(key, value);
         }
     }
 }
