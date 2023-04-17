@@ -7,7 +7,7 @@ public class Purchasable : Consumer
     
     [SerializeField] protected int price;
     // Start is called before the first frame update
-    void Start()
+    protected void Init()
     {
         GameObject promtGO = PoolManager.Spawn("Prompt");
         prompt = promtGO.GetComponent<Prompt>();

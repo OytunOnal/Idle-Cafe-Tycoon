@@ -107,9 +107,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7984777477629019525}
-  - component: {fileID: 7984777477629019531}
   - component: {fileID: 7984777477629019530}
   - component: {fileID: 3653348496245771969}
+  - component: {fileID: 6735864338216022510}
   m_Layer: 0
   m_Name: Table Purchasable
   m_TagString: Purchasable
@@ -134,20 +134,6 @@ Transform:
   m_Father: {fileID: 9170732957893868523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7984777477629019531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7984777477629019524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3864e2297c386b48850880b9fbff3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productBag: {fileID: 0}
-  price: 5
 --- !u!65 &7984777477629019530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -175,6 +161,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plane: {fileID: 7984777479164304522}
   activePlane: {fileID: 7984777477484492249}
+--- !u!114 &6735864338216022510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984777477629019524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691c956691a21f84ca338888e67cdb94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productHolder: {fileID: 0}
+  price: 0
 --- !u!1 &7984777477725839963
 GameObject:
   m_ObjectHideFlags: 0

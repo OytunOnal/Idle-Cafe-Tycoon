@@ -31,11 +31,11 @@ public class Waiter : GAgent
 
     private void OnTriggerStay(Collider other) 
     {
-        if (other.tag.Equals("CoffeeMachine"))
+        if (other.tag.Equals("BeverageMachine"))
         {
             if (productHolder.IsFull) return;
             {
-                Product p = other.GetComponent<CoffeeMachine>().GiveCollectible();
+                Product p = other.GetComponent<BeverageMachine>().GiveCollectible();
                 if (p == null) return;
                 
                 GWorld.Instance.GetWorld().ModifyState("HasCoffee", +1);
@@ -57,6 +57,13 @@ public class Waiter : GAgent
                 GWorld.Instance.GetWorld().ModifyState("HasCoffee", -1);           
                     
             }
+        }
+        
+        if (other.tag.Equals("Coin"))
+        {
+            PoolManager.Despawn(other.gameObject);
+            
+            Wallet.Instance.Earn();
         }
     }
 }

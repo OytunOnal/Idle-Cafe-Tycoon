@@ -45,10 +45,9 @@ public class DynamicProductHolder  : ProductHolder
     {
         products.Remove(p);
         Count--;
-        ReArrangeProducts();
     }
 
-    private void ReArrangeProducts()
+    public void ReArrangeProducts()
     {
         lastPosition = Vector3.zero;
 

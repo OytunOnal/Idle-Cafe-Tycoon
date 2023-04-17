@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoffeePlantPurchasable : Purchasable
+public class ExpressoMachinePurchasable : Purchasable
 {
-
+    // Start is called before the first frame update
     void Start()
     {
-        price = 8;
+        price = 20;
         Init();
     }
 }

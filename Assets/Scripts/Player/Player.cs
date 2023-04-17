@@ -5,8 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]    private DynamicProductHolder productHolder;
-    [SerializeField]    private Wallet wallet;
-
 
     private void OnTriggerEnter(Collider other) 
     {
@@ -16,14 +14,15 @@ public class Player : MonoBehaviour
             
             for (int i =0; i < productHolder.products.Count; i++)
             {
-                
-                if (consumer.IsBagFull) return;
-                if (consumer.TakeCollectible(productHolder.products[i]))
+                Product p = productHolder.products[i];
+                if (consumer.TakeCollectible(p))
                 {
-                    productHolder.RemoveProduct(productHolder.products[i]);
+                    productHolder.RemoveProduct(p);
+                    PoolManager.Despawn(p.gameObject);
                     i--;
                 }
             }
+            productHolder.ReArrangeProducts();
         }
     }
 
@@ -35,25 +34,25 @@ public class Player : MonoBehaviour
                 Product p = other.GetComponent<Producer>().GiveCollectible();
                 productHolder.AddProduct(p);
         }
-        else if (other.tag.Equals("CoffeeMachine"))
+        else if (other.tag.Equals("BeverageMachine"))
         {
             if (productHolder.IsFull) return;
-                Product p = other.GetComponent<CoffeeMachine>().GiveCollectible();
+                Product p = other.GetComponent<BeverageMachine>().GiveCollectible();
                 productHolder.AddProduct(p);
         }
         else if (other.tag.Equals("Purchasable"))
         {
-            if (wallet.isEmpty) return;
+            if (Wallet.Instance.isEmpty) return;
 
-            other.GetComponent<Consumer>().TakeCollectible(wallet.money);
-            wallet.Spend();
+            other.GetComponent<Consumer>().TakeCollectible(Wallet.Instance.money);
+            Wallet.Instance.Spend();
         }
 
-        else if (other.tag.Equals("Coin"))
+        if (other.tag.Equals("Coin"))
         {
             PoolManager.Despawn(other.gameObject);
             
-            wallet.Earn();
+            Wallet.Instance.Earn();
         }
     }
 

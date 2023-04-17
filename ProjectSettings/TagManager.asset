@@ -19,6 +19,7 @@ TagManager:
   - GetBeverage
   - Coffee
   - CoffeeMachine
+  - BeverageMachine
   layers:
   - Default
   - TransparentFX

@@ -4,35 +4,52 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
+    #region Singleton Pattern
+
+    private static Wallet _current;
+
+    public static Wallet Instance
+    {
+         get { return _current ?? (_current = (Wallet) FindObjectOfType(typeof (Wallet))); }
+    }
+
+    #endregion
+
     [SerializeField] TMPro.TMP_Text coinCountText;
 
-    int coinCount = 50;
+    protected int coinCount = 50;
+    protected int CoinCount 
+    {
+        get => coinCount; 
+        set
+        {
+            coinCount = value;
+            isEmpty = coinCount == 0;
+        }
+    }
 
     public bool isEmpty = false;
     public Coin money;
     // Start is called before the first frame update
+
     
 
     private void Start() 
     {
-        coinCountText.SetText(coinCount.ToString());
+        CoinCount = 100;
+        coinCountText.SetText(CoinCount.ToString());
     }
 
     public void Spend()
     {
-        coinCount--;
+        CoinCount--;
         
-        coinCountText.SetText(coinCount.ToString());
-
-        isEmpty = (coinCount<=0);
+        coinCountText.SetText(CoinCount.ToString());
     }
 
     public void Earn()
     {
-        coinCount++;
-        
-        coinCountText.SetText(coinCount.ToString());
-
-        isEmpty = false;
+        CoinCount++;        
+        coinCountText.SetText(CoinCount.ToString());
     }
 }

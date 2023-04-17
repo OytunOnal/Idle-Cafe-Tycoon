@@ -14,6 +14,7 @@ public class TrashBox : Consumer
         currentConsumableDic.Add(typeof(Milk),int.MaxValue);
         consumableDic.Add(typeof(Coffee),int.MaxValue);
         currentConsumableDic.Add(typeof(Coffee),int.MaxValue);
+        currentConsumableDic.Add(typeof(Expresso),int.MaxValue);
     }
     
 

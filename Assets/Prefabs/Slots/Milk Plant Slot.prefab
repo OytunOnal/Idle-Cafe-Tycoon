@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6849338397325087128}
-  - component: {fileID: 6849338397325087135}
   - component: {fileID: 7424354073788313703}
   - component: {fileID: 6940004750729000686}
+  - component: {fileID: 4460602105080338402}
   m_Layer: 0
   m_Name: Milk Plant Purchasable
   m_TagString: Purchasable
@@ -36,20 +36,6 @@ Transform:
   m_Father: {fileID: 6849338398284430599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6849338397325087135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6849338397325087129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3864e2297c386b48850880b9fbff3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productHolder: {fileID: 0}
-  price: 5
 --- !u!65 &7424354073788313703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77,6 +63,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plane: {fileID: 6849338397458672183}
   activePlane: {fileID: 6849338397613447282}
+--- !u!114 &4460602105080338402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849338397325087129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a48ac0614684bd489f9f99b35a38572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productHolder: {fileID: 0}
+  price: 0
 --- !u!1 &6849338397458672183
 GameObject:
   m_ObjectHideFlags: 0

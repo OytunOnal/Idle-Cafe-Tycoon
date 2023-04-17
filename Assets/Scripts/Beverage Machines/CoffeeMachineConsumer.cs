@@ -3,13 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoffeeMachineConsumer : Consumer
+public class CoffeeMachineConsumer : BeverageMachineConsumer
 {
+
     private int coffeeBeanCount = 3;
     private int  milkCount = 1;
-
-    public Action PrequisiteFilledEvent;
-    public Action ConsumeEvent;
     
     private void Start() 
     {
@@ -31,8 +29,6 @@ public class CoffeeMachineConsumer : Consumer
         prompt.AddPromtLine(typeof(Milk),
                             PoolManager.Spawn("MilkPromptLine"),
                             milkCount);
-
-        ConsumeEvent += ConsumeAll;
     }
 
     public void Reset()
@@ -53,32 +49,4 @@ public class CoffeeMachineConsumer : Consumer
         prompt.gameObject.SetActive(true);
     }
     
-
-    protected override void Add(Product p)
-    {        
-        Log.ConsumerLog("Consume");
-        productHolder.AddProduct(p);
-        int count = --currentConsumableDic[p.GetType()];
-        prompt.SetCount(p.GetType(),count);
-        if (count == 0) 
-        {
-            currentConsumableDic.Remove(p.GetType());
-            if (currentConsumableDic.Keys.Count == 0) 
-            {
-                prompt.HidePromt();
-                PrequisiteFilledEvent?.Invoke();
-            }
-        }
-    }
-
-    protected  void ConsumeAll()
-    {        
-        Product p = productHolder.RemoveProduct();
-
-        while (p!= null)
-        {
-            Consume(p);
-            p = productHolder.RemoveProduct();
-        }
-    }
 }
