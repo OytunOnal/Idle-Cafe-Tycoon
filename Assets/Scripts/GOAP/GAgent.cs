@@ -78,9 +78,7 @@ public class GAgent : MonoBehaviour
             invoked = false;
         }
         else
-        {
-            Debug.Log("Reset");
-            
+        {            
             actionQueue = null;
             currentAction.running = false;
             currentAction = null;

@@ -6,8 +6,6 @@ using UnityEngine;
 public class Consumer : MonoBehaviour
 {
     [SerializeField]    protected ProductBag productBag;
-    [SerializeField]    protected GameObject plane;    
-    [SerializeField]    protected GameObject activePlane;
 
     protected Prompt prompt;
     protected Dictionary<Type,int> consumableDic = new Dictionary<Type, int>();
@@ -24,24 +22,6 @@ public class Consumer : MonoBehaviour
             return true;
         }
         else return false;
-    }
-
-    private void OnTriggerEnter(Collider other) 
-    {
-        if (other.tag.Equals("Player"))
-        {
-            activePlane.SetActive(true);
-            plane.SetActive(false);
-        }
-    }
-
-    private void OnTriggerExit(Collider other) 
-    {        
-        if (other.tag.Equals("Player"))
-        {
-            activePlane.SetActive(false);
-            plane.SetActive(true);
-        }        
     }
 
     protected virtual void Add(Product p){}

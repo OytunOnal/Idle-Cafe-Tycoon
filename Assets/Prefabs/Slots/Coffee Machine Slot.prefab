@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 355096419799748058}
   - component: {fileID: 355096419799748061}
   - component: {fileID: 4388942580240116773}
+  - component: {fileID: 9215899043680324536}
   m_Layer: 0
   m_Name: CoffeeMachine Purchasable
   m_TagString: Purchasable
@@ -130,8 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productBag: {fileID: 0}
-  plane: {fileID: 372997970883594221}
-  activePlane: {fileID: 372997970972958977}
   price: 5
 --- !u!65 &4388942580240116773
 BoxCollider:
@@ -146,6 +145,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.72, y: 1, z: 6.61}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9215899043680324536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355096419799748059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b956eca4ead347be4f936f3ff78ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 372997970883594221}
+  activePlane: {fileID: 372997970972958977}
 --- !u!1 &372997970791448149
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372997971810084521}
   - component: {fileID: 372997971809794698}
+  - component: {fileID: 7237262001972855827}
   m_Layer: 0
   m_Name: CoffeeMachine
   m_TagString: Untagged
@@ -824,6 +838,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoffeeMPro: {fileID: 372997971226896782}
   CoffeeMCon: {fileID: 372997971955510390}
+--- !u!114 &7237262001972855827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372997971809794697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b956eca4ead347be4f936f3ff78ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 372997971395319366}
+  activePlane: {fileID: 372997972088073835}
 --- !u!1 &372997971809794701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,8 +1101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productBag: {fileID: 372997971955510283}
-  plane: {fileID: 372997971395319366}
-  activePlane: {fileID: 372997972088073835}
 --- !u!65 &372997971955510389
 BoxCollider:
   m_ObjectHideFlags: 0

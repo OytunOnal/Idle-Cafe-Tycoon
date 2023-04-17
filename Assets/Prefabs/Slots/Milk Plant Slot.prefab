@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6849338397325087128}
   - component: {fileID: 6849338397325087135}
   - component: {fileID: 7424354073788313703}
+  - component: {fileID: 6940004750729000686}
   m_Layer: 0
   m_Name: Milk Plant Purchasable
   m_TagString: Purchasable
@@ -48,8 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productBag: {fileID: 0}
-  plane: {fileID: 6849338397458672183}
-  activePlane: {fileID: 6849338397613447282}
   price: 5
 --- !u!65 &7424354073788313703
 BoxCollider:
@@ -64,6 +63,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.79, y: 1, z: 1.97}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6940004750729000686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849338397325087129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b956eca4ead347be4f936f3ff78ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 6849338397458672183}
+  activePlane: {fileID: 6849338397613447282}
 --- !u!1 &6849338397458672183
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3288555553804843708}
   - component: {fileID: 3288555553804843706}
   - component: {fileID: 3288555553804843707}
+  - component: {fileID: 6667020059954089401}
   m_Layer: 0
   m_Name: Trash Box
   m_TagString: Untagged
@@ -118,8 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productBag: {fileID: 3288555553804843707}
-  plane: {fileID: 3288555554704937116}
-  activePlane: {fileID: 3288555553501364942}
 --- !u!114 &3288555553804843707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +136,21 @@ MonoBehaviour:
   - {fileID: 3288555552996431712}
   - {fileID: 3288555553186720491}
   - {fileID: 3288555553732433797}
-  isFull: 0
   size: 4
+--- !u!114 &6667020059954089401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458795821122802340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b956eca4ead347be4f936f3ff78ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 3288555554704937116}
+  activePlane: {fileID: 3288555553501364942}
 --- !u!1 &3288555552996431712
 GameObject:
   m_ObjectHideFlags: 0
