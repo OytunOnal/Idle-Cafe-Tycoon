@@ -35,7 +35,12 @@ public class Player : MonoBehaviour
                 Product p = other.GetComponent<Producer>().GiveCollectible();
                 productHolder.AddProduct(p);
         }
-
+        else if (other.tag.Equals("CoffeeMachine"))
+        {
+            if (productHolder.IsFull) return;
+                Product p = other.GetComponent<CoffeeMachine>().GiveCollectible();
+                productHolder.AddProduct(p);
+        }
         else if (other.tag.Equals("Purchasable"))
         {
             if (wallet.isEmpty) return;

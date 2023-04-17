@@ -18,6 +18,7 @@ TagManager:
   - WaitingArea
   - GetBeverage
   - Coffee
+  - CoffeeMachine
   layers:
   - Default
   - TransparentFX

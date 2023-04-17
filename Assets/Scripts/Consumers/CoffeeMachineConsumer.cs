@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoffeeMConsumer : Consumer
+public class CoffeeMachineConsumer : Consumer
 {
     private int coffeeBeanCount = 3;
     private int  milkCount = 1;
@@ -66,7 +66,6 @@ public class CoffeeMConsumer : Consumer
             if (currentConsumableDic.Keys.Count == 0) 
             {
                 prompt.HidePromt();
-//                Debug.Log(PrequisiteFilledEvent.GetInvocationList());
                 PrequisiteFilledEvent?.Invoke();
             }
         }

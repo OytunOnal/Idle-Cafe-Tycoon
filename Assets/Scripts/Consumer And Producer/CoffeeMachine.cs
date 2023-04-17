@@ -1,34 +1,64 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CoffeeMachine : MonoBehaviour
 {
-    [SerializeField] CoffeeMProducer CoffeeMPro;
-    [SerializeField] CoffeeMConsumer CoffeeMCon;
+    [SerializeField] StaticProductHolder productHolder;
+    [SerializeField] CoffeeMachineConsumer CoffeeMachineConsumer;
 
+    string productName = "Coffee";
+    int produceTime = 2;
+
+    public Action ProductNumberDecreaseEvent;
     private void Start() 
     {        
-        CoffeeMPro.ConsumePrequisitesEvent += FireConsumeEvent;
-        CoffeeMPro.ProductReadyEvent += CoffeeReady;
-
-        CoffeeMCon.PrequisiteFilledEvent+= FirePrequisiteFilled;
+        CoffeeMachineConsumer.PrequisiteFilledEvent+= PrequisiteFilled;
     }
 
-    void FirePrequisiteFilled()
+    void PrequisiteFilled()
     {
-         CoffeeMPro.PrequisiteFilledEvent?.Invoke();
+        CoffeeMachineConsumer.ConsumeEvent?.Invoke();
+        Produce();
     }
 
-    void FireConsumeEvent()
+    async void Produce()
     {
-         CoffeeMCon.ConsumeEvent?.Invoke();
+        await Task.Delay(1000*produceTime);
+        GameObject newProduct = PoolManager.Spawn(productName);
+        if (newProduct == null) return;
+        productHolder.AddProduct(newProduct.GetComponent<Product>());
+        CoffeeReady();
+    }
+
+    public Product GiveCollectible()
+    {
+        Log.ProducerLog("Give Collectible");
+        Product p = productHolder.RemoveProduct();
+
+        if (p!=null) 
+        {
+            ProductNumberDecreaseEvent?.Invoke();
+            ProductNumberDecreaseEvent = null;
+        }
+
+        return p;
     }
 
     void CoffeeReady()
     {   
-        CoffeeMCon.Reset();
         GWorld.Instance.GetQueue("beverages").AddResource(this.gameObject);
         GWorld.Instance.GetWorld().ModifyState("CoffeeReady", +1);
+
+        if (!productHolder.IsFull)   
+        {
+            CoffeeMachineConsumer.Reset();
+        }
+        else
+        {
+            ProductNumberDecreaseEvent += CoffeeMachineConsumer.Reset;
+        }
     }
 }

@@ -35,7 +35,7 @@ public class ProducerWaitState : ProducerState
         }
         else
         {
-            nextState = ownerProducer.PrequisiteState;
+            nextState = ownerProducer.ProduceState;
             PostProcess();
         }
     }

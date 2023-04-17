@@ -12,7 +12,7 @@ public class ProducerProduceState : ProducerState
     {
         ownerProducer = owner;
          Log.ProducerStateLog(ownerProducer.name + " ProduceState construct");
-        waitTime = ownerProducer.ProductWaitTime;
+        waitTime = ownerProducer.ProduceTime;
         stateName = "Produce State";
         nextState = ownerProducer.WaitState;
     }

@@ -31,11 +31,11 @@ public class Waiter : GAgent
 
     private void OnTriggerStay(Collider other) 
     {
-        if (other.name.Equals("CoffeeMProducer"))
+        if (other.name.Equals("CoffeeMachine"))
         {
             if (productHolder.IsFull) return;
             {
-                Product p = other.GetComponent<Producer>().GiveCollectible();
+                Product p = other.GetComponent<CoffeeMachine>().GiveCollectible();
                 if (p == null) return;
                 
                 GWorld.Instance.GetWorld().ModifyState("HasCoffee", +1);
