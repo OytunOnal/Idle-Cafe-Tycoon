@@ -31,7 +31,7 @@ public class Waiter : GAgent
 
     private void OnTriggerStay(Collider other) 
     {
-        if (other.name.Equals("CoffeeMachine"))
+        if (other.tag.Equals("CoffeeMachine"))
         {
             if (productHolder.IsFull) return;
             {

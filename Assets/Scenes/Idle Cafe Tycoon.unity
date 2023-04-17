@@ -5544,6 +5544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 372997971809794697, guid: 097c0c2462b9d0e418d07409c257129a, type: 3}
+      propertyPath: m_TagString
+      value: CoffeeMachine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 097c0c2462b9d0e418d07409c257129a, type: 3}
 --- !u!33 &458133036303504357
